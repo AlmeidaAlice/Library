@@ -1,32 +1,150 @@
-# Prerequisites
-*.d
+ #include <iostream>
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+ using namespace std;
 
-# Precompiled Headers
-*.gch
-*.pch
+ void ImprimeMenuPrincipal(){
+          cout<< "\t\tSelecione a opcao desejada digitando o numero a ela correspondente e,em seguida, enter."<<endl;
+     cout<<"\t\t\t\t\t ________________________________________________"<<endl;
+     cout<<"\t\t\t\t\t|                                                |"<<endl;
+     cout<<"\t\t\t\t\t|   1-        Entrar como Biblioteca             |"<<endl;
+     cout<<"\t\t\t\t\t|________________________________________________|"<<endl;
+      cout<<"\t\t\t\t\t________________________________________________"<<endl;
+     cout<<"\t\t\t\t\t|                                                |"<<endl;
+     cout<<"\t\t\t\t\t|   2-        Entrar como Usuario                |"<<endl;
+     cout<<"\t\t\t\t\t|________________________________________________|"<<endl;
+     cout<<"\t\t\t\t\t ________________________________________________"<<endl;
+     cout<<"\t\t\t\t\t|                                                |"<<endl;
+     cout<<"\t\t\t\t\t|   3-                Ajuda                      |"<<endl;
+     cout<<"\t\t\t\t\t|________________________________________________|"<<endl;
+     cout<<"\t\t\t\t\t ________________________________________________"<<endl;
+     cout<<"\t\t\t\t\t|                                                |"<<endl;
+     cout<<"\t\t\t\t\t|   4-                 Sair                      |"<<endl;
+     cout<<"\t\t\t\t\t|________________________________________________|"<<endl;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+ }
 
-# Fortran module files
-*.mod
-*.smod
+ void ImprimeMenuBiblioteca(){
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+     cout<<"\t\t\t\t\t ________________________________________________"<<endl;
+     cout<<"\t\t\t\t\t|                                                |"<<endl;
+     cout<<"\t\t\t\t\t|   1-       Cadastrar nova Biblioteca           |"<<endl;
+     cout<<"\t\t\t\t\t|________________________________________________|"<<endl;
+     cout<<"\t\t\t\t\t ________________________________________________"<<endl;
+     cout<<"\t\t\t\t\t|                                                |"<<endl;
+     cout<<"\t\t\t\t\t|   2-        Acessar minha conta                |"<<endl;
+     cout<<"\t\t\t\t\t|________________________________________________|"<<endl;
+     cout<<"\t\t\t\t\t ________________________________________________"<<endl;
+     cout<<"\t\t\t\t\t|                                                |"<<endl;
+     cout<<"\t\t\t\t\t|   3-       Voltar ao menu Principal            |"<<endl;
+     cout<<"\t\t\t\t\t|________________________________________________|"<<endl;
 
-# Executables
-*.exe
-*.out
-*.app
+
+ }
+
+ void ImprimeMenuUsuario(){
+
+     cout<<"\t\t\t\t\t ________________________________________________"<<endl;
+     cout<<"\t\t\t\t\t|                                                |"<<endl;
+     cout<<"\t\t\t\t\t|   1-       Cadastrar novo Usuario              |"<<endl;
+     cout<<"\t\t\t\t\t|________________________________________________|"<<endl;
+     cout<<"\t\t\t\t\t ________________________________________________"<<endl;
+     cout<<"\t\t\t\t\t|                                                |"<<endl;
+     cout<<"\t\t\t\t\t|   2-        Acessar minha conta                |"<<endl;
+     cout<<"\t\t\t\t\t|________________________________________________|"<<endl;
+     cout<<"\t\t\t\t\t ________________________________________________"<<endl;
+     cout<<"\t\t\t\t\t|                                                |"<<endl;
+     cout<<"\t\t\t\t\t|   3-       Voltar ao menu Principal            |"<<endl;
+     cout<<"\t\t\t\t\t|________________________________________________|"<<endl;
+
+
+ }
+
+ void ImprimirAjuda(){
+     cout<<" *\t\tAo cadastrar uma biblioteca voce fornecera os dados de tal estabelecimento e os   "<<endl;
+     cout<<"  \t\tlivros que estadisponibilizara a comunidade;"<<endl;
+     cout<<" *\t\tAo cadastrar um usuario você informara seus dados pessoais. Vale ressaltar que   "<<endl;
+     cout<<"  \t\tseus dados nao serao exibidos as outras pessoas,assim como assegura nossa politica "<<endl;
+     cout<<"  \t\tde privacidade (disponivel no momento do cadastro);"<<endl;
+     cout<<" *\t\tSeja uma instituicao ou pessoa fisica, nao se preocupe, sua conta podera ser      "<<endl;
+     cout<<"  \t\tapagada a qualquer momento."<<endl;
+ }
+
+ int main(){
+//______________________________________Declaração de variáveis________________________________________________
+
+     int op_menu;
+     int reopcao;
+     int opcao_temporaria;
+
+//______________________________________________________________________________________________________________
+
+     cout<< "\t\t\tBem Vindo ao BiblioLovers.com seu site de emprestimos e doaçoes preferido!!!"<<endl;
+     ImprimeMenuPrincipal();
+     cin>>op_menu;
+     cout<<"\t\t\t\t\t\tA opcao digitada foi: "<<op_menu<<endl<<"\t\t\tDigite 2 caso queira selecionar outra opcao ou 1 para prosseguir. "<<endl;
+     cin>>reopcao;
+
+     switch (reopcao){
+        case 2:
+             cout <<"\t\t\t\t\t\tDigite sua reopcao:"<<endl;
+
+             cin>>op_menu;
+     }
+
+     while(op_menu!=4){
+     switch(op_menu){
+         case 1:
+         do{
+        ImprimeMenuBiblioteca();
+        cin>>opcao_temporaria;
+
+        if ( opcao_temporaria == 1 ){       // Cadastra a biblioteca com uma função dentro da classe ? talvez
+           cout<<"\n\n\n Código para pegar todos os dados,fazer o cadastro, agradecer e voltar pro menu biblioteca\n\n"<<endl;
+           // CadastrarBiblio();
+
+        }else if( opcao_temporaria == 2 ){
+         // Imprimir dados da conta e dar a opção de alterar ou checar livros emprestados, sei lá
+
+        }else if ( opcao_temporaria == 3 ){
+            break;                           // Volta ao menu Principal
+        }else{
+            cout<<"\t\t\tOpcao invalida,por favor tente novamente."<<endl;
+        }
+
+        }while (opcao_temporaria!=3);
+        break;
+
+        case 2:
+        do{
+        ImprimeMenuUsuario();
+        cin>>opcao_temporaria;
+
+        if ( opcao_temporaria == 1 ){       // Cadastra novo usuario com uma função dentro da classe ? talvez
+           // CadastrarNovoUsuario();
+
+        }else if( opcao_temporaria == 2 ){
+         // Imprimir dados da conta e dar a opção de alterar ou checar fila de espera para livros,datas de devolução,possíveis multas,etc
+
+        }else if ( opcao_temporaria == 3 ){
+            break;                           // Volta ao menu Principal
+        }else{
+            cout<<"\t\t\tOpcao inválida,por favor tente novamente."<<endl;
+        }
+
+        }while (opcao_temporaria!=3);
+        break;
+
+
+         break;
+         case 3:ImprimirAjuda();
+         break;
+         case 4:
+         break;
+     }
+     cout<<"\n\n\t\t\t\t\t\tE agora, o que deseja fazer?"<<endl;
+     ImprimeMenuPrincipal();
+     cin>>op_menu;
+
+ }
+     return 0;
+ }
